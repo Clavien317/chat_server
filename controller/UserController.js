@@ -110,8 +110,6 @@ const modif=async(req,res)=>
     }
 }
 
-
-
 const supprimer=async(req,res)=>
 {
     const id = req.params.id
@@ -158,7 +156,6 @@ const reinitial =async(req,res)=>
 
 const initialisez = async (req, res) => {
     const { password, email, code } = req.body;
-
     try {
         const user = await model.findOne({ email });
 
@@ -179,7 +176,6 @@ const initialisez = async (req, res) => {
         return res.status(500).json("Erreur lors de la réinitialisation du mot de passe");
     }
 }
-
 
 
 module.exports = {ajout,liste,mono,login,verifier,modif,verifyJwt,supprimer,reinitial,initialisez}
